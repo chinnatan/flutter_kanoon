@@ -1,3 +1,6 @@
 {
-    "app_name": "zKCNT POS"
+  "app_name": "zKCNT POS",
+  "username": "ชื่อผู้ใช้งาน",
+  "password": "รหัสผ่าน",
+  "login":"เข้าสู่ระบบ"
 }

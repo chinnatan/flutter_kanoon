@@ -1,25 +1,43 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_pos/app/app_config.dart';
+import 'package:flutter_pos/ui/shared/ui_config.dart';
+import 'package:flutter_pos/ui/views/mobile/login.dart';
+import 'package:get/route_manager.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: AppConfig.instance.primaryColor));
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: AppConfig.instance.appName,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple,
-            primary: AppConfig.instance.primaryColor),
+          seedColor: Colors.deepPurple,
+          primary: AppConfig.instance.primaryColor,
+        ),
+        primaryColor: AppConfig.instance.primaryColor,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppConfig.instance.primaryColor,
+            foregroundColor: Colors.white,
+            shape: const RoundedRectangleBorder(
+              borderRadius: boderRadiusAll10,
+            ),
+          ),
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         useMaterial3: true,
       ),
-      home: MyHomePage(title: AppConfig.instance.appName),
+      home: const LoginScreen(),
     );
   }
 }
