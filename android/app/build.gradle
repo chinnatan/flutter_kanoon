@@ -23,7 +23,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace "com.example.flutter_pos"
+    namespace "th.zkcnt.app.pos"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
@@ -51,10 +51,22 @@ android {
         versionName flutterVersionName
     }
 
+    flavorDimensions "default"
+    productFlavors {
+        prod {
+            dimension "default"
+            resValue "string", "app_name", "zKCNT POS Prod"
+        }
+        dev {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "zKCNT POS Dev"
+            versionNameSuffix ".dev"
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
     }
