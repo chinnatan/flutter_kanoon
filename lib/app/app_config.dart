@@ -6,17 +6,17 @@ class AppConfig {
   FlavorEnvironment? flavorEnvironment;
   String appName = "";
   String baseURL = "";
-  MaterialColor primaryColor = const MaterialColor(0xFFA3B18A, <int, Color>{
-    50: Color(0xFFA4A4BF),
-    100: Color(0xFFA4A4BF),
-    200: Color(0xFFA4A4BF),
-    300: Color(0xFF9191B3),
-    400: Color(0xFF7F7FA6),
-    500: Color(0xFFA3B18A),
-    600: Color(0xFF929F7C),
-    700: Color(0xFF828D6E),
-    800: Color(0xFF494980),
-    900: Color(0xFF181861),
+  MaterialColor primaryColor = const MaterialColor(0xFF84A59D, <int, Color>{
+    50: Color(0xFFE2F1EF),
+    100: Color(0xFFC6DAD3),
+    200: Color(0xFFA5BFB8),
+    300: Color(0xFF84A59D),
+    400: Color(0xFF6B9188),
+    500: Color(0xFF84A59D),
+    600: Color(0xFF486E65),
+    700: Color(0xFF395A53),
+    800: Color(0xFF2B4741),
+    900: Color(0xFF1B322D),
   });
 
   static AppConfig _instance = AppConfig(
@@ -44,7 +44,7 @@ class AppConfig {
   static AppConfig dev() {
     return _instance = AppConfig(
         flavorEnvironment: FlavorEnvironment.dev,
-        appName: "Dev zKCNT POS",
+        appName: "zKCNT POS Dev",
         baseURL: "");
   }
 
@@ -52,7 +52,7 @@ class AppConfig {
   static AppConfig prd() {
     return _instance = AppConfig(
         flavorEnvironment: FlavorEnvironment.prd,
-        appName: "Prod zKCNT POS",
+        appName: "zKCNT POS Prod",
         baseURL: "");
   }
 }
