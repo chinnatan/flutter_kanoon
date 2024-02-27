@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pos/app/app_config.dart';
 import 'package:flutter_pos/ui/shared/theme_config.dart';
 import 'package:flutter_pos/ui/shared/ui_config.dart';
+import 'package:flutter_pos/ui/views/login/controller/login_controller.dart';
+import 'package:get/get_instance/get_instance.dart';
 import 'package:get/route_manager.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginView extends StatelessWidget {
+  final LoginController _loginController = Get.put(LoginController());
+
+  LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,22 +23,29 @@ class LoginScreen extends StatelessWidget {
             children: [
               Container(
                 margin: bottom16,
-                child: Text(
-                  "Kanoon POS",
-                  style: TextStyle(color: AppConfig.instance.primaryColor, fontSize: 32, fontWeight: FontWeight.w500)
-                ),
+                child: Text("app_name".tr(),
+                    style: TextStyle(
+                        color: AppConfig.instance.primaryColor,
+                        fontSize: 32,
+                        fontWeight: FontWeight.w500)),
               ),
               Container(
                 margin: bottom8,
                 child: TextField(
-                  decoration: ThemeConfig.outlineTextFieldPrimary(
-                    "username".tr(),
-                  ),
+                  onChanged: (value) {
+                    _loginController.username = value;
+                  },
+                  decoration:
+                      ThemeConfig.outlineTextFieldPrimary("username".tr()),
                 ),
               ),
               Container(
                 margin: bottom16,
                 child: TextField(
+                  obscureText: true,
+                  onChanged: (value) {
+                    _loginController.password = value;
+                  },
                   decoration: ThemeConfig.outlineTextFieldPrimary(
                     "password".tr(),
                   ),
@@ -43,7 +54,9 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 width: Get.width,
                 child: ElevatedButton(
-                  onPressed: () => {},
+                  onPressed: () async {
+                    await _loginController.login();
+                  },
                   child: Text(
                     "login".tr(),
                   ),

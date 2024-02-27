@@ -1,5 +1,5 @@
 name: flutter_pos
-description: "This is zKCNT POS"
+description: "This is Kanoon POS"
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -14,12 +14,22 @@ dependencies:
   cupertino_icons: ^1.0.2
   easy_localization: ^3.0.4
   get: ^4.6.6
+  retrofit: '>=4.0.0 <5.0.0'
+  logger: any  #for logging purpose
+  json_annotation: ^4.8.1
+  dio: ^5.4.1
+  http: ^1.2.0
+  shared_preferences: ^2.2.2
+  get_storage: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  retrofit_generator: '>=7.0.0 <8.0.0' # required dart >=2.19
+  build_runner: '>=2.3.0 <4.0.0'
+  json_serializable: ^6.6.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

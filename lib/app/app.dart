@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_pos/app/app_config.dart';
+import 'package:flutter_pos/core/routes/routes.dart';
 import 'package:flutter_pos/ui/shared/ui_config.dart';
-import 'package:flutter_pos/ui/views/mobile/login.dart';
 import 'package:get/route_manager.dart';
 
 class MyApp extends StatelessWidget {
@@ -19,6 +19,8 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
+      initialRoute: AppPages.initial,
+      getPages: AppPages.routes,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
@@ -37,7 +39,6 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
     );
   }
 }

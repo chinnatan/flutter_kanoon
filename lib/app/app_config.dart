@@ -45,7 +45,7 @@ class AppConfig {
     return _instance = AppConfig(
         flavorEnvironment: FlavorEnvironment.dev,
         appName: "zKCNT POS Dev",
-        baseURL: "");
+        baseURL: "http://zkcnt.myddns.me:3000/");
   }
 
   // === Env Production === //

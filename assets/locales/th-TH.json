@@ -1,6 +1,13 @@
 {
-  "app_name": "zKCNT POS",
+  "app_name": "Kanoon",
   "username": "ชื่อผู้ใช้งาน",
   "password": "รหัสผ่าน",
-  "login":"เข้าสู่ระบบ"
+  "login": "เข้าสู่ระบบ",
+  "title_notify": "แจ้งเตือน",
+  "title_close": "ปิด",
+  "msg_err_input_user_or_pass": "กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน",
+  "bottom_nav" : {
+    "home": "หน้าแรก",
+    "store": "ร้านค้า"
+  }
 }

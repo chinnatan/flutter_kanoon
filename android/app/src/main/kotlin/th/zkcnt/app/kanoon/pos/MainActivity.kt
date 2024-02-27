@@ -1,4 +1,4 @@
-package th.zkcnt.app.pos
+package th.zkcnt.app.kanoon.pos
 
 import io.flutter.embedding.android.FlutterActivity
 
