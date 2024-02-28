@@ -57,17 +57,10 @@ class DialogUtil {
     );
   }
 
-  static void showErrorSnackbar(AppException exception) {
-    String? message;
-
-    if (exception is InvalidInputException) {
-      InvalidInputException invalidInputException = exception;
-      message = invalidInputException.message;
-    }
-
+  static void showErrorSnackbar(String message) {
     Get.snackbar(
       "title_notify".tr(),
-      message ?? "test",
+      message,
       borderRadius: 10,
       margin: all8,
       snackPosition: SnackPosition.TOP,

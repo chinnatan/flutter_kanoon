@@ -15,19 +15,20 @@ dependencies:
   easy_localization: ^3.0.4
   get: ^4.6.6
   retrofit: '>=4.0.0 <5.0.0'
-  logger: any  #for logging purpose
+  logger: ^2.0.2+1  #for logging purpose
   json_annotation: ^4.8.1
   dio: ^5.4.1
   http: ^1.2.0
   shared_preferences: ^2.2.2
   get_storage: any
+  pretty_dio_logger: ^1.3.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
-  retrofit_generator: '>=7.0.0 <8.0.0' # required dart >=2.19
+  flutter_lints: ^3.0.1
+  retrofit_generator: ^8.1.0 # required dart >=2.19
   build_runner: '>=2.3.0 <4.0.0'
   json_serializable: ^6.6.2
 

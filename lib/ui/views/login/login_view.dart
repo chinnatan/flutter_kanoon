@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pos/app/app_config.dart';
 import 'package:flutter_pos/ui/shared/theme_config.dart';
 import 'package:flutter_pos/ui/shared/ui_config.dart';
-import 'package:flutter_pos/ui/views/login/controller/login_controller.dart';
+import 'package:flutter_pos/ui/views/login/login_controller.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/route_manager.dart';
+import 'package:get/state_manager.dart';
 
 class LoginView extends StatelessWidget {
-  final LoginController _loginController = Get.put(LoginController());
-
+  final LoginController _controller = Get.put(LoginController());
   LoginView({super.key});
 
   @override
@@ -33,7 +33,7 @@ class LoginView extends StatelessWidget {
                 margin: bottom8,
                 child: TextField(
                   onChanged: (value) {
-                    _loginController.username = value;
+                    _controller.username = value;
                   },
                   decoration:
                       ThemeConfig.outlineTextFieldPrimary("username".tr()),
@@ -44,7 +44,7 @@ class LoginView extends StatelessWidget {
                 child: TextField(
                   obscureText: true,
                   onChanged: (value) {
-                    _loginController.password = value;
+                    _controller.password = value;
                   },
                   decoration: ThemeConfig.outlineTextFieldPrimary(
                     "password".tr(),
@@ -54,8 +54,8 @@ class LoginView extends StatelessWidget {
               SizedBox(
                 width: Get.width,
                 child: ElevatedButton(
-                  onPressed: () async {
-                    await _loginController.login();
+                  onPressed: () {
+                    _controller.login();
                   },
                   child: Text(
                     "login".tr(),

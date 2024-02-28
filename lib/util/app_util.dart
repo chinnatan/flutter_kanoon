@@ -1,13 +1,29 @@
 import 'package:flutter_pos/core/constant/storage_key_const.dart';
+import 'package:flutter_pos/ui/views/login/model/user_info.dart';
+import 'package:get_storage/get_storage.dart';
 
 class AppUtil {
-  // static final GetStorage _user = GetStorage(StorageKeyConst.user);
+  static GetStorage? _box;
 
-  // static setUserInfo(UserInfo? userInfo) {
-  //   _user.write(StorageKeyConst.user, userInfo);
-  // }
+  static Future<void> setUserInfo(UserInfo? userInfo) async {
+    _box ??= GetStorage();
+    if (userInfo != null) {
+      await _box?.write(StorageKeyConst.user, userInfo);
+    }
+  }
 
-  // static UserInfo? getUserInfo() {
-  //   return _user.read(StorageKeyConst.user);
-  // }
+  static UserInfo? getUserInfo() {
+    _box ??= GetStorage();
+    if (_box != null) {
+      if (_box?.read(StorageKeyConst.user) != null) {
+        return UserInfo.fromJson(_box?.read(StorageKeyConst.user));
+      }
+    }
+    return null;
+  }
+
+  static void clearUserInfo() {
+    _box ??= GetStorage();
+    _box?.remove(StorageKeyConst.user);
+  }
 }
