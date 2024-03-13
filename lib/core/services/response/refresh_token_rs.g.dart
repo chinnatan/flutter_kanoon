@@ -8,8 +8,9 @@ part of 'refresh_token_rs.dart';
 
 RefreshTokenRs _$RefreshTokenRsFromJson(Map<String, dynamic> json) =>
     RefreshTokenRs(
-      accessToken: json['accessToken'] as String?,
-      refreshToken: json['refreshToken'] as String?,
+      result: json['result'] == null
+          ? null
+          : RefreshTokenResult.fromJson(json['result'] as Map<String, dynamic>),
     )
       ..success = json['success'] as bool
       ..message = json['message'] as String?;
@@ -18,6 +19,5 @@ Map<String, dynamic> _$RefreshTokenRsToJson(RefreshTokenRs instance) =>
     <String, dynamic>{
       'success': instance.success,
       'message': instance.message,
-      'accessToken': instance.accessToken,
-      'refreshToken': instance.refreshToken,
+      'result': instance.result?.toJson(),
     };

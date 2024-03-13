@@ -11,18 +11,20 @@
     "store": "ร้านค้า"
   },
   "http_rs_message": {
-    "success": "success",
-    "bad_request_error": "bad request. try again later",
-    "no_content": "success with not content",
-    "forbidden_error": "forbidden request. try again later",
-    "unauthorized_error": "user unauthorized, try again later",
-    "not_found_error": "url not found, try again later",
-    "conflict_error": "conflict found, try again later",
-    "internal_server_error": "some thing went wrong, try again later",
-    "unknown_error": "some thing went wrong, try again later",
-    "timeout_error": "time out, try again late",
-    "default_error": "some thing went wrong, try again later",
-    "cache_error": "cache error, try again later",
-    "no_internet_error": "Please check your internet connection"
-  }
+    "success": "สำเร็จ",
+    "bad_request_error": "คำขอที่ไม่ดี ลองอีกครั้งในภายหลัง",
+    "no_content": "สำเร็จ",
+    "forbidden_error": "คำขอต้องห้าม ลองอีกครั้งในภายหลัง",
+    "unauthorized_error": "ผู้ใช้ไม่ได้รับอนุญาต โปรดลองอีกครั้งในภายหลัง",
+    "not_found_error": "ไม่พบ URL โปรดลองอีกครั้งในภายหลัง",
+    "conflict_error": "พบข้อขัดแย้ง โปรดลองอีกครั้งในภายหลัง",
+    "internal_server_error": "มีบางอย่างผิดพลาด โปรดลองอีกครั้งในภายหลัง",
+    "unknown_error": "มีบางอย่างผิดพลาด โปรดลองอีกครั้งในภายหลัง",
+    "timeout_error": "หมดเวลา ลองอีกครั้งล่าช้า",
+    "default_error": "มีบางอย่างผิดพลาด โปรดลองอีกครั้งในภายหลัง",
+    "cache_error": "ข้อผิดพลาดแคช โปรดลองอีกครั้งในภายหลัง",
+    "no_internet_error": "โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ"
+  },
+  "hello": "สวัสดี",
+  "store": "ร้าน"
 }

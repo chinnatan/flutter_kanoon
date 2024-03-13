@@ -39,7 +39,7 @@ abstract class AppPages {
     GetPage(
       name: Routes.home,
       middlewares: [EnsureAuthMiddleware()],
-      page: () => const HomeView(),
+      page: () => HomeView(),
       bindings: [
         HomeBinding(),
       ],

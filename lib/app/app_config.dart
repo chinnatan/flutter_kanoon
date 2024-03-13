@@ -44,15 +44,15 @@ class AppConfig {
   static AppConfig dev() {
     return _instance = AppConfig(
         flavorEnvironment: FlavorEnvironment.dev,
-        appName: "zKCNT POS Dev",
-        baseURL: "http://zkcnt.myddns.me:3000/");
+        appName: "Kanoon Dev",
+        baseURL: "http://localhost:3000/");
   }
 
   // === Env Production === //
   static AppConfig prd() {
     return _instance = AppConfig(
         flavorEnvironment: FlavorEnvironment.prd,
-        appName: "zKCNT POS Prod",
+        appName: "Kanoon Prod",
         baseURL: "");
   }
 }

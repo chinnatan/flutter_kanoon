@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pos/core/constant/storage_key_const.dart';
 import 'package:flutter_pos/core/routes/app_routes.dart';
 import 'package:flutter_pos/ui/views/home/home_view.dart';
 import 'package:flutter_pos/ui/views/main/main_controller.dart';
@@ -7,9 +8,11 @@ import 'package:flutter_pos/util/app_util.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
+import 'package:get_storage/get_storage.dart';
 
 class MainView extends StatelessWidget {
   final MainController _controller = Get.put(MainController());
+  final box = GetStorage();
   MainView({super.key});
 
   buildBottomNav() {
@@ -37,11 +40,11 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("app_name").tr(),
+        title: const Text("app_name").tr(),
         actions: [
           IconButton(
             onPressed: () {
-              AppUtil.clearUserInfo();
+              box.remove(StorageKeyConst.user);
               Get.offAllNamed(Routes.splash);
             },
             icon: const Icon(
@@ -55,7 +58,7 @@ class MainView extends StatelessWidget {
         () {
           return IndexedStack(
             index: _controller.tabIndex.value,
-            children: const [
+            children: [
               HomeView(),
             ],
           );
